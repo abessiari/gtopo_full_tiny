@@ -1,8 +1,7 @@
 GTOPO TINY Set
-Copying target file /ccs/home/aessiari/VTKM_DATA/gtopo_full_tiny.txt into current directory
-Splitting data into 4 x 4 parts
 
-Running HACT
+# Splitting data into 4 x 4 parts
+
 ```
 srun -n16 -c1 --gpus-per-task=1 --gpu-bind=closest ContourTree_Distributed --vtkm-device Kokkos --preSplitFiles --saveOutputData --augmentHierarchicalTree --computeVolumeBranchDecomposition --numBlocks=16 gtopo_full_tiny_part_%d_of_16.txt
 ```
